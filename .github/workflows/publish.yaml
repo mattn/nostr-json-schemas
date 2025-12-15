@@ -3,8 +3,6 @@ name: Deploy botlist
 on:
   push:
     branches: [ main ]
-    paths:
-      - *.json
   workflow_dispatch:
 
 permissions:
