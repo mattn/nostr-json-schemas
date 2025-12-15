@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/nostr-protocol/nips/schemas/client-event.json",
+  "$id": "https://github.com/mattn/nostr-json-schemas/client-event.json",
   "title": "Nostr Client EVENT Message",
   "description": "Client to relay EVENT message as defined in NIP-01",
   "type": "array",

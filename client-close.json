@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/nostr-protocol/nips/schemas/client-close.json",
+  "$id": "https://github.com/mattn/nostr-json-schemas/client-close.json",
   "title": "Nostr Client CLOSE Message",
   "description": "Client to relay CLOSE message as defined in NIP-01",
   "type": "array",

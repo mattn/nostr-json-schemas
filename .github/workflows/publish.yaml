@@ -1,0 +1,31 @@
+name: Deploy botlist
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - *.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          mkdir -p _site
+          cp *.json _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - uses: actions/deploy-pages@v4

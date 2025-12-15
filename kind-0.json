@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/nostr-protocol/nips/schemas/kind-0.json",
+  "$id": "https://github.com/mattn/nostr-json-schemas/kind-0.json",
   "title": "Nostr Kind 0 Event (User Metadata)",
   "description": "User metadata event as defined in NIP-01",
   "allOf": [
