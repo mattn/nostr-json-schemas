@@ -64,6 +64,10 @@
           "type": "integer",
           "minimum": 1,
           "description": "Maximum number of events to return"
+        },
+        "search": {
+          "type": "string",
+          "description": "A human-readable query string for searching events (NIP-50)"
         }
       },
       "patternProperties": {
