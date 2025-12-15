@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/mattn/nostr-json-schemas/client-req.json",
+  "$id": "https://mattn.github.io/nostr-json-schemas/client-req.json",
   "title": "Nostr Client REQ Message",
   "description": "Client to relay REQ message as defined in NIP-01",
   "type": "array",

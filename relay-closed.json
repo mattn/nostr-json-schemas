@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/mattn/nostr-json-schemas/relay-closed.json",
+  "$id": "https://mattn.github.io/nostr-json-schemas/relay-closed.json",
   "title": "Nostr Relay CLOSED Message",
   "description": "Relay to client CLOSED message as defined in NIP-01",
   "type": "array",

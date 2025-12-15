@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/mattn/mattn/nostr-json-schemas/event.json",
+  "$id": "https://mattn.github.io/nostr-json-schemas/event.json",
   "title": "Nostr Event",
   "description": "A Nostr event as defined in NIP-01",
   "type": "object",
