@@ -34,7 +34,7 @@ These schemas conform to JSON Schema Draft 7.
 const Ajv = require('ajv');
 const ajv = new Ajv();
 
-const eventSchema = require('./schemas/event.json');
+const eventSchema = require('./event.json');
 const validate = ajv.compile(eventSchema);
 
 const event = {
@@ -59,7 +59,7 @@ if (!valid) {
 import jsonschema
 import json
 
-with open('schemas/event.json') as f:
+with open('event.json') as f:
     schema = json.load(f)
 
 event = {
