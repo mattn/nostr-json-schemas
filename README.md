@@ -79,6 +79,76 @@ except jsonschema.ValidationError as e:
     print(f"Invalid: {e}")
 ```
 
+## Editor Integration
+
+### Vim (with vim-lsp-settings)
+
+Execute `:LspSettingsLocalEdit` and add the following configuration to associate schemas with specific file patterns. This enables validation and completion for Nostr-related JSON files.
+
+```json
+{
+    "json-languageserver": {
+        "disabled": false,
+        "workspace_config": {
+            "json": {
+                "format": true,
+                "schemas": [
+                    {
+                        "name": "Nostr Event JSON",
+                        "description": "Nostr Event JSON",
+                        "fileMatch": ["**/nostr-event.json"],
+                        "url": "https://mattn.github.io/nostr-json-schemas/event.json"
+                    },
+                    {
+                        "name": "Nostr Kind 0 JSON",
+                        "description": "Nostr Kind 0 JSON",
+                        "fileMatch": ["**/kind0.json"],
+                        "url": "https://mattn.github.io/nostr-json-schemas/kind-0.json"
+                    }
+                    // Add more schemas as needed, e.g.:
+                    // {
+                    //     "name": "Nostr Client REQ",
+                    //     "fileMatch": ["**/client-req.json"],
+                    //     "url": "https://mattn.github.io/nostr-json-schemas/client-req.json"
+                    // }
+                ]
+            }
+        }
+    }
+}
+```
+
+### Visual Studio Code
+
+VS Code has built-in support for JSON Schema validation and IntelliSense.
+
+Add the following to your User or Workspace `settings.json` (accessible via *File > Preferences > Settings* or `Ctrl+,`, then search for "json schemas"):
+
+```json
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["**/nostr-event.json"],
+            "url": "https://mattn.github.io/nostr-json-schemas/event.json"
+        },
+        {
+            "fileMatch": ["**/kind0.json"],
+            "url": "https://mattn.github.io/nostr-json-schemas/kind-0.json"
+        }
+        // Add more as needed
+    ]
+}
+```
+
+Alternatively, in individual JSON files, add a `$schema` property at the top level:
+
+```json
+{
+    "$schema": "https://mattn.github.io/nostr-json-schemas/event.json",
+    // ... your event data
+}
+```
+
 ## References
 
 - [NIP-01: Basic protocol flow description](../01.md)
