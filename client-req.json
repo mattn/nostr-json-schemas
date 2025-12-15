@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/nostr-protocol/nips/schemas/client-req.json",
+  "title": "Nostr Client REQ Message",
+  "description": "Client to relay REQ message as defined in NIP-01",
+  "type": "array",
+  "minItems": 2,
+  "items": [
+    {
+      "type": "string",
+      "const": "REQ"
+    },
+    {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "Subscription ID"
+    }
+  ],
+  "additionalItems": {
+    "$ref": "#/definitions/filter"
+  },
+  "definitions": {
+    "filter": {
+      "type": "object",
+      "description": "Filter object for subscription",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "description": "List of event IDs",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "authors": {
+          "type": "array",
+          "description": "List of pubkeys",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "kinds": {
+          "type": "array",
+          "description": "List of event kinds",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          }
+        },
+        "since": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unix timestamp in seconds, events must be >= this value"
+        },
+        "until": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unix timestamp in seconds, events must be <= this value"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Maximum number of events to return"
+        }
+      },
+      "patternProperties": {
+        "^#[a-zA-Z]$": {
+          "type": "array",
+          "description": "Tag filter",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

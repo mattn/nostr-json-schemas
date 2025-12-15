@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/nostr-protocol/nips/schemas/relay-event.json",
+  "title": "Nostr Relay EVENT Message",
+  "description": "Relay to client EVENT message as defined in NIP-01",
+  "type": "array",
+  "minItems": 3,
+  "maxItems": 3,
+  "items": [
+    {
+      "type": "string",
+      "const": "EVENT"
+    },
+    {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "Subscription ID"
+    },
+    {
+      "$ref": "event.json"
+    }
+  ]
+}

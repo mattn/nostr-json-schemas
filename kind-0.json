@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/nostr-protocol/nips/schemas/kind-0.json",
+  "title": "Nostr Kind 0 Event (User Metadata)",
+  "description": "User metadata event as defined in NIP-01",
+  "allOf": [
+    {
+      "$ref": "event.json"
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": 0
+        },
+        "content": {
+          "type": "string",
+          "description": "Stringified JSON object with user metadata"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "metadata": {
+      "type": "object",
+      "description": "User metadata object (parsed from content field)",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nickname or full name"
+        },
+        "about": {
+          "type": "string",
+          "description": "Short bio"
+        },
+        "picture": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the profile image"
+        },
+        "nip05": {
+          "type": "string",
+          "description": "NIP-05 identifier"
+        },
+        "banner": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the banner image"
+        },
+        "display_name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Personal website URL"
+        },
+        "lud06": {
+          "type": "string",
+          "description": "Lightning Address (LNURL)"
+        },
+        "lud16": {
+          "type": "string",
+          "description": "Lightning Address"
+        }
+      }
+    }
+  }
+}

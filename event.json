@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/nostr-protocol/nips/schemas/event.json",
+  "title": "Nostr Event",
+  "description": "A Nostr event as defined in NIP-01",
+  "type": "object",
+  "required": ["id", "pubkey", "created_at", "kind", "tags", "content", "sig"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "32-bytes lowercase hex-encoded sha256 of the serialized event data"
+    },
+    "pubkey": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "32-bytes lowercase hex-encoded public key of the event creator"
+    },
+    "created_at": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Unix timestamp in seconds"
+    },
+    "kind": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535,
+      "description": "Event kind number"
+    },
+    "tags": {
+      "type": "array",
+      "description": "Array of tags",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      }
+    },
+    "content": {
+      "type": "string",
+      "description": "Arbitrary string content"
+    },
+    "sig": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{128}$",
+      "description": "64-bytes lowercase hex of the signature of the sha256 hash of the serialized event data"
+    }
+  },
+  "additionalProperties": false
+}

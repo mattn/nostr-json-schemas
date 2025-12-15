@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/nostr-protocol/nips/schemas/relay-notice.json",
+  "title": "Nostr Relay NOTICE Message",
+  "description": "Relay to client NOTICE message as defined in NIP-01",
+  "type": "array",
+  "minItems": 2,
+  "maxItems": 2,
+  "items": [
+    {
+      "type": "string",
+      "const": "NOTICE"
+    },
+    {
+      "type": "string",
+      "description": "Human-readable message"
+    }
+  ]
+}

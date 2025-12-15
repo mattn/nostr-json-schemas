@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/nostr-protocol/nips/schemas/relay-eose.json",
+  "title": "Nostr Relay EOSE Message",
+  "description": "Relay to client EOSE (End of Stored Events) message as defined in NIP-01",
+  "type": "array",
+  "minItems": 2,
+  "maxItems": 2,
+  "items": [
+    {
+      "type": "string",
+      "const": "EOSE"
+    },
+    {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "Subscription ID"
+    }
+  ]
+}
