@@ -206,3 +206,12 @@ All schemas conform to JSON Schema Draft 7 and can be validated using standard J
 
 - [NIP-01: Basic protocol flow description](../01.md)
 - [Nostr Protocol](https://github.com/nostr-protocol/nostr)
+
+
+## License
+
+MIT
+
+## Author
+
+Yasuhiro Matsumoto (a.k.a. mattn)
