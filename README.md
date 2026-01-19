@@ -34,6 +34,23 @@ This directory contains JSON schemas for messages used in the Nostr protocol.
 |--------|-------------|-----|
 | [`kind-0.json`](./kind-0.json) | User metadata (profile information) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) |
 
+## Quick Start
+
+### Install Dependencies
+
+**Node.js:**
+```bash
+npm install ajv
+```
+
+**Python:**
+```bash
+pip install jsonschema
+```
+
+### Validate an Event
+
+These schemas conform to JSON Schema Draft 7. See the [Usage](#usage) section below for complete validation examples.
 
 ## Usage
 
