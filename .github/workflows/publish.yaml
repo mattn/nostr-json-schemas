@@ -20,7 +20,8 @@ jobs:
 
       - run: |
           mkdir -p _site
-          cp *.json README.md _site/
+          cp *.json _site/
+          pandoc README.md -f markdown -t html5 -s -o _site/index.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
