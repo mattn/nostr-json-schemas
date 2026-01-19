@@ -177,6 +177,22 @@ Alternatively, in individual JSON files, add a `$schema` property at the top lev
 }
 ```
 
+## Testing
+
+### Validate all schemas
+
+You can validate JSON against these schemas using online tools:
+- [JSON Schema Validator](https://www.jsonschemavalidator.net/)
+- [JSON Schema Lint](https://jsonschemalint.com/)
+
+### Manual validation
+
+Use the examples in the [Usage](#usage) section above to validate events programmatically.
+
+### Schema validation
+
+All schemas conform to JSON Schema Draft 7 and can be validated using standard JSON Schema validators.
+
 ## References
 
 - [NIP-01: Basic protocol flow description](../01.md)
