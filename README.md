@@ -2,27 +2,64 @@
 
 This directory contains JSON schemas for messages used in the Nostr protocol.
 
-## Basic Schemas
+## Table of Contents
 
-### Event Structure
-- **event.json** - Basic structure of a Nostr event (NIP-01)
+- [Schemas Overview](#schemas-overview)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Editor Integration](#editor-integration)
+- [Testing](#testing)
+- [References](#references)
+
+## Schemas Overview
+
+### Basic Schemas
+
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`event.json`](./event.json) | Basic structure of a Nostr event | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
 ### Client to Relay Messages
-- **client-event.json** - EVENT message (publishing events)
-- **client-req.json** - REQ message (requesting events and subscriptions)
-- **client-close.json** - CLOSE message (stopping subscriptions)
+
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`client-event.json`](./client-event.json) | EVENT message (publishing events) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`client-req.json`](./client-req.json) | REQ message (requesting events and subscriptions) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-50](https://github.com/nostr-protocol/nips/blob/master/50.md) |
+| [`client-close.json`](./client-close.json) | CLOSE message (stopping subscriptions) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
 ### Relay to Client Messages
-- **relay-event.json** - EVENT message (delivering events)
-- **relay-ok.json** - OK message (acceptance/rejection of EVENT)
-- **relay-eose.json** - EOSE message (end of stored events)
-- **relay-closed.json** - CLOSED message (subscription ended)
-- **relay-notice.json** - NOTICE message (notifications)
 
-## Event Kind Schemas
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`relay-event.json`](./relay-event.json) | EVENT message (delivering events) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-ok.json`](./relay-ok.json) | OK message (acceptance/rejection of EVENT) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-eose.json`](./relay-eose.json) | EOSE message (end of stored events) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-closed.json`](./relay-closed.json) | CLOSED message (subscription ended) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-notice.json`](./relay-notice.json) | NOTICE message (notifications) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
-### Kind 0
-- **kind-0.json** - User metadata (profile information)
+### Event Kind Schemas
+
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`kind-0.json`](./kind-0.json) | User metadata (profile information) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) |
+
+## Quick Start
+
+### Install Dependencies
+
+**Node.js:**
+```bash
+npm install ajv
+```
+
+**Python:**
+```bash
+pip install jsonschema
+```
+
+### Validate an Event
+
+These schemas conform to JSON Schema Draft 7. See the [Usage](#usage) section below for complete validation examples.
 
 ## Usage
 
@@ -148,6 +185,22 @@ Alternatively, in individual JSON files, add a `$schema` property at the top lev
     // ... your event data
 }
 ```
+
+## Testing
+
+### Validate all schemas
+
+You can validate JSON against these schemas using online tools:
+- [JSON Schema Validator](https://www.jsonschemavalidator.net/)
+- [JSON Schema Lint](https://jsonschemalint.com/)
+
+### Manual validation
+
+Use the examples in the [Usage](#usage) section above to validate events programmatically.
+
+### Schema validation
+
+All schemas conform to JSON Schema Draft 7 and can be validated using standard JSON Schema validators.
 
 ## References
 
