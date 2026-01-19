@@ -2,27 +2,38 @@
 
 This directory contains JSON schemas for messages used in the Nostr protocol.
 
-## Basic Schemas
+## Schemas Overview
 
-### Event Structure
-- **event.json** - Basic structure of a Nostr event (NIP-01)
+### Basic Schemas
+
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`event.json`](./event.json) | Basic structure of a Nostr event | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
 ### Client to Relay Messages
-- **client-event.json** - EVENT message (publishing events)
-- **client-req.json** - REQ message (requesting events and subscriptions)
-- **client-close.json** - CLOSE message (stopping subscriptions)
+
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`client-event.json`](./client-event.json) | EVENT message (publishing events) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`client-req.json`](./client-req.json) | REQ message (requesting events and subscriptions) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-50](https://github.com/nostr-protocol/nips/blob/master/50.md) |
+| [`client-close.json`](./client-close.json) | CLOSE message (stopping subscriptions) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
 ### Relay to Client Messages
-- **relay-event.json** - EVENT message (delivering events)
-- **relay-ok.json** - OK message (acceptance/rejection of EVENT)
-- **relay-eose.json** - EOSE message (end of stored events)
-- **relay-closed.json** - CLOSED message (subscription ended)
-- **relay-notice.json** - NOTICE message (notifications)
 
-## Event Kind Schemas
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`relay-event.json`](./relay-event.json) | EVENT message (delivering events) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-ok.json`](./relay-ok.json) | OK message (acceptance/rejection of EVENT) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-eose.json`](./relay-eose.json) | EOSE message (end of stored events) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-closed.json`](./relay-closed.json) | CLOSED message (subscription ended) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
+| [`relay-notice.json`](./relay-notice.json) | NOTICE message (notifications) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
-### Kind 0
-- **kind-0.json** - User metadata (profile information)
+### Event Kind Schemas
+
+| Schema | Description | NIP |
+|--------|-------------|-----|
+| [`kind-0.json`](./kind-0.json) | User metadata (profile information) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) |
+
 
 ## Usage
 
