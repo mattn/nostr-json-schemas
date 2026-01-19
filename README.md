@@ -2,6 +2,15 @@
 
 This directory contains JSON schemas for messages used in the Nostr protocol.
 
+## Table of Contents
+
+- [Schemas Overview](#schemas-overview)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Editor Integration](#editor-integration)
+- [Testing](#testing)
+- [References](#references)
+
 ## Schemas Overview
 
 ### Basic Schemas
