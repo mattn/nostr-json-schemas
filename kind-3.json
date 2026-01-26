@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mattn.github.io/nostr-json-schemas/kind-3.json",
+  "title": "Nostr Kind 3 Event (Contacts/Follow List)",
+  "description": "Contacts/Follow list event as defined in NIP-02",
+  "allOf": [
+    {
+      "$ref": "event.json"
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": 3
+        },
+        "content": {
+          "type": "string",
+          "description": "Stringified JSON object with contact list metadata (optional, similar to kind-0 metadata)"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "contactMetadata": {
+      "type": "object",
+      "description": "Contact list metadata object (parsed from content field, optional)",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name for the contact list"
+        },
+        "about": {
+          "type": "string",
+          "description": "Description of the contact list"
+        },
+        "picture": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the contact list image"
+        }
+      }
+    },
+    "pTag": {
+      "type": "array",
+      "description": "Tag 'p' representing a contact (pubkey). Format: [\"p\", \"<pubkey>\", \"<relay-url>\", \"<petname>\"]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "p"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "32-bytes lowercase hex-encoded public key"
+        }
+      ],
+      "additionalItems": {
+        "type": "string",
+        "description": "Optional relay URL (3rd element) or petname (4th element)"
+      }
+    }
+  }
+}
+
+
