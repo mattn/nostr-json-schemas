@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mattn.github.io/nostr-json-schemas/kind-3.json",
+  "title": "Nostr Kind 3 Event (Contacts/Follow List)",
+  "description": "Contacts/Follow list event as defined in NIP-02",
+  "allOf": [
+    {
+      "$ref": "event.json"
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": 3
+        },
+        "content": {
+          "type": "string",
+          "description": "Content field (NIP-02 does not define the structure of this field)"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "pTag": {
+      "type": "array",
+      "description": "Tag 'p' representing a contact (pubkey). Format: [\"p\", \"<pubkey>\", \"<relay-url>\", \"<petname>\"]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "p"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "32-bytes lowercase hex-encoded public key"
+        }
+      ],
+      "additionalItems": {
+        "type": "string",
+        "description": "Optional relay URL (3rd element) or petname (4th element)"
+      }
+    }
+  }
+}
+
+
