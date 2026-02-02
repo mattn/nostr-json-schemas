@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mattn.github.io/nostr-json-schemas/kind-5.json",
+  "title": "Nostr Kind 5 Event (Event Deletion)",
+  "description": "Event deletion event as defined in NIP-09",
+  "allOf": [
+    {
+      "$ref": "event.json"
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": 5
+        },
+        "content": {
+          "type": "string",
+          "description": "Reason for deletion (optional)"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "eTag": {
+      "type": "array",
+      "description": "Tag 'e' representing an event to be deleted. Format: [\"e\", \"<event-id>\"]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "e"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "32-bytes lowercase hex-encoded event ID to be deleted"
+        }
+      ]
+    },
+    "aTag": {
+      "type": "array",
+      "description": "Tag 'a' representing an addressable event to be deleted. Format: [\"a\", \"<kind>:<pubkey>:<d-tag>\"]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "a"
+        },
+        {
+          "type": "string",
+          "description": "Addressable event identifier in format <kind>:<pubkey>:<d-tag>"
+        }
+      ]
+    },
+    "kTag": {
+      "type": "array",
+      "description": "Tag 'k' specifying the kind of events being deleted. Format: [\"k\", \"<kind>\"]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "k"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "description": "Event kind number as string"
+        }
+      ]
+    }
+  }
+}
+
