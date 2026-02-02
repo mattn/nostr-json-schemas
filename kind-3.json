@@ -14,31 +14,12 @@
         },
         "content": {
           "type": "string",
-          "description": "Stringified JSON object with contact list metadata (optional, similar to kind-0 metadata)"
+          "description": "Content field (NIP-02 does not define the structure of this field)"
         }
       }
     }
   ],
   "definitions": {
-    "contactMetadata": {
-      "type": "object",
-      "description": "Contact list metadata object (parsed from content field, optional)",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name for the contact list"
-        },
-        "about": {
-          "type": "string",
-          "description": "Description of the contact list"
-        },
-        "picture": {
-          "type": "string",
-          "format": "uri",
-          "description": "URL of the contact list image"
-        }
-      }
-    },
     "pTag": {
       "type": "array",
       "description": "Tag 'p' representing a contact (pubkey). Format: [\"p\", \"<pubkey>\", \"<relay-url>\", \"<petname>\"]",
