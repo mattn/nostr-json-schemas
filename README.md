@@ -42,6 +42,7 @@ This directory contains JSON schemas for messages used in the Nostr protocol.
 | Schema | Description | NIP |
 |--------|-------------|-----|
 | [`kind-0.json`](./kind-0.json) | User metadata (profile information) | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md), [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) |
+| [`kind-1.json`](./kind-1.json) | Text note | [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) |
 
 ## Quick Start
 

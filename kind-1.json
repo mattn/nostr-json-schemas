@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mattn.github.io/nostr-json-schemas/kind-1.json",
+  "title": "Nostr Kind 1 Event (Text Note)",
+  "description": "Text note event as defined in NIP-01",
+  "allOf": [
+    {
+      "$ref": "event.json"
+    },
+    {
+      "properties": {
+        "kind": {
+          "const": 1
+        },
+        "content": {
+          "type": "string",
+          "description": "Plain text content of the note"
+        }
+      }
+    }
+  ],
+  "definitions": {
+    "eTag": {
+      "type": "array",
+      "description": "Tag 'e' representing a referenced event. Format: [\"e\", \"<event-id>\", ...]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "e"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "32-bytes lowercase hex-encoded event ID"
+        }
+      ],
+      "additionalItems": {
+        "type": "string",
+        "description": "Optional additional elements"
+      }
+    },
+    "pTag": {
+      "type": "array",
+      "description": "Tag 'p' representing a mentioned pubkey. Format: [\"p\", \"<pubkey>\", ...]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "p"
+        },
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "32-bytes lowercase hex-encoded public key"
+        }
+      ],
+      "additionalItems": {
+        "type": "string",
+        "description": "Optional additional elements"
+      }
+    },
+    "tTag": {
+      "type": "array",
+      "description": "Tag 't' representing a hashtag. Format: [\"t\", \"<hashtag>\"]",
+      "minItems": 2,
+      "items": [
+        {
+          "type": "string",
+          "const": "t"
+        },
+        {
+          "type": "string",
+          "description": "Hashtag name"
+        }
+      ]
+    }
+  }
+}
+
